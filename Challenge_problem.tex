@@ -301,6 +301,30 @@ As the circulant matrix $A$ is normal, so it is unitarily diagonalizable, so
 D = P^{-1} A P\\
 \implies D = \frac{1}{n}(P^H A P)
 \end{align}
+Now, for calculating eigen value let us consider an eigen vector $x^{(k)}$ such that
+\begin{align}
+Ax^{(k)}= y 
+\end{align} 
+Then the $l^{th}$ component is 
+\begin{align}
+y_l = \sum_{j=0}^{n-1} C_{j-l} \omega_n^{jk}\\
+\implies y_l = \omega_n^{lk} \sum_{j=0}^{n-1}C_{j-l} \omega_n^{(j-l)k}
+\end{align} 
+But as $C_j$ and $\omega_n^j$ both are periodic, so 
+\begin{align}
+\sum_{j=0}^{n-1}C_{j-l} \omega_n^{(j-l)k} = \sum_{j=0}^{n-1} C_j \omega_n^{jk} = \alpha_k
+\end{align} 
+and $\omega_n^{lk}=x^{(k)}$
+So,
+\begin{align}
+A x^{(k)} = \alpha_k x^{(k)}
+\end{align} 
+Where 
+\begin{align}
+\alpha_k = \sum_{j=0}^{n-1} C_j \omega_n^{jk}
+\end{align} 
+$\alpha_k$ is the $k^{th}$ eigen value. If $\alpha$ is a vector of all eigen values then $\alpha = \myvec{\alpha_0\\\alpha_1\\.\\.\\\alpha_{(n-1)}}$
+So, $\alpha$ = $PC$ where $C$ is the first row of $A$ matrix, that is , the eigen values of $A$ are the DFT of the first row of the matrix $A$.
 %\renewcommand{\theequation}{\theenumi}
 %\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
 %\numberwithin{equation}{enumi}
