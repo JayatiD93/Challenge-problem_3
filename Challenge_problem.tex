@@ -1,0 +1,320 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+
+\begin{document}
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+
+
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+
+
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
+\vspace{3cm}
+
+
+\title{Challenge Problem 3}
+\author{Jayati Dutta}
+
+
+
+
+
+% make the title area
+\maketitle
+
+\newpage
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+
+%\begin{abstract}
+%This is a simple document explaining how to determine the QR decomposition of a 2x2 matrix.
+%\end{abstract}
+
+%Download all python codes 
+%
+%\begin{lstlisting}
+%svn co https://github.com/JayatiD93/trunk/My_solution_design/codes
+%\end{lstlisting}
+
+%Download all and latex-tikz codes from 
+%%
+%\begin{lstlisting}
+%svn co https://github.com/gadepall/school/trunk/ncert/geometry/figs
+%\end{lstlisting}
+%%
+
+
+\section{Problem}
+Prove that - Complex-valued circulant matrices are simultaneously orthogonally diagonalizable.In other words, there exists an n×n matrix $P$ such that for every n×n circulant matrix $A$,the matrix $P^H AP$ is diagonal. Here, $P^H$ is the conjugate transpose/Hermitian (sometimes confusingly called the adjoint) of $P$. What are $P$ and $P^{-1}$?
+
+\section{Explanation}
+Let us consider $A$ be a nxn circulant matrix, that is,
+\begin{align}
+A = \myvec{C_0 & C_1 & C_2 & ...& C_{n-1}\\C_{n-1} & C_0 & C_1 & ...& C_{n-2}\\.& ...&..&..&.\\.& ...&..&..&.\\.& ...&..&..&.\\C_1 & .&..&...& C_0}
+\end{align}
+Where element of the matrix is considered as complex. So, considering the Hermitian transpose of the matrix $A$ we can get that:
+\begin{align}
+A^H = \myvec{C_0^* & C_1^* & C_2^* & ...& C_{n-1}^*\\C_{n-1}^* & C_0^* & C_1^* & ...& C_{n-2}^*\\.& ...&..&..&.\\.& ...&..&..&.\\.& ...&..&..&.\\C_1^* & .&..&...& C_0^*}^T\\
+\implies A^H = \myvec{C_0^* & C_{n-1}^* & C_{n-2}^* & ...& C_1^*\\C_1^* & C_0^* & .. & ...& ..\\.& ...&..&..&.\\.& ...&..&..&.\\.& ...&..&..&.\\C_{n-1}^* & .&..&...& C_0^*}
+\end{align}
+It is observed that $A^H$ is also a circulant matrix.
+One of the important properties of circulant matrices is that, all circulant matrices can commute to each other. So, matrix $A$ can commute to its Hermitian transpose matrix $A^H$, that is, 
+\begin{align}
+A A^H = A^H A
+\end{align}
+This implies that matrix $A$ is a normal matrix, that is why matrix $A$ has a full set of mutually orthogonal eigen vectors.
+As all the circulant matrices can commute to each other, so they have same set of eigen vectors but different eigen values.
+
+Let, $x^{(0)}$ is one eigen vector and
+\begin{align}
+x^{(0)} = \myvec{1\\1\\.\\.\\1}\\
+\implies Ax^{(0)} = A \myvec{1\\1\\.\\.\\1}\\
+\implies Ax^{(0)} = (C_0+C_1+C_2+....+C_{n-1})x^{(0)}\\
+\implies Ax^{(0)} = \lambda_0 x^{(0)}
+\end{align}
+
+The eigen vectors can also be written as :
+\begin{align}
+\omega_n^{i} = e^{\frac{2\pi i}{n}}
+\end{align}
+So, the $k^{th}$ eigen vector of a circulant matrix is :
+\begin{align}
+x^{(k)} = \myvec{\omega_n^{0k}\\\omega_n^{1k}\\\omega_n^{2k}\\.\\.\\\omega_n^{(n-1)k}}
+\end{align}
+Now, let us consider a matrix $P$ whose columns are the eigen vectors, such that:
+\begin{align}
+P = \myvec{x^{(0)} & x^{(1)} &...&x^{(n-1)}}
+\end{align}
+These eigen vectors are mutually orthogonal.
+
+If any vector is multiplied by the matrix $P$, then DFT operation can be performed.
+The full form of DFT is Discrete Fourier Transform which is mainly used for numerical calculation in Digital Signal Processing. The DFT transforms N discrete-time samples to N discrete-frequency samples. If $x[n]$ is the discrete time samples and $X[k]$ is the discrete frequency samples,then the relation between them will be:
+\begin{align}
+X[k] = \sum_{n=0}^{N-1} x[n] \exp{(-\frac{2\pi n k}{N})}\\
+\implies  X[k] = \sum_{n=0}^{N-1} x[n] \omega_{N}^{-nk}
+\label{eqn1}
+\end{align}
+Where $N$ is the length of the sequence.Now, lets consider the length of the sequence is 2, that is, $N$ = 2. So $P$ will be :
+\begin{align}
+P = \myvec{x^{(0)} & x^{(1)}}
+\end{align}
+and 
+\begin{align}
+x^{(k)} = \myvec{\omega_n^{0k}\\\omega_n^{1k}}
+\end{align}
+So,
+\begin{align}
+x^{(0)} = \myvec{1\\1}\\
+x^{(1)} = \myvec{1\\-1}
+\end{align}
+Now, 
+\begin{align}
+P = \myvec{1 & 1\\1 & -1}
+\end{align}
+Similarly, it can be also observed that when the length of sequence is 4x4,  the $P$ matrix is:
+\begin{align}
+P = \myvec{x^{(0)} & x^{(1)} & x^{(2)} & x^{(3)}}
+\end{align}
+and 
+\begin{align}
+x^{(k)} = \myvec{\omega_n^{0k}\\\omega_n^{1k}\\\omega_n^{2k}\\\omega_n^{3k}}
+\end{align}
+So, 
+\begin{align}
+P = \myvec{1 & 1 & 1 & 1\\1 & i & -1 & -i\\1 & -1 & 1 & -1\\1 & -i & -1 & i}
+\end{align}
+If we calculate $X[k]$ using \ref{eqn1}, we will get same value.
+So $P$ is a DFT matrix and its columns are orthogonal. $P$ is symmetric and
+\begin{align}
+\frac{1}{n}P^H P=I\\
+\implies \frac{1}{n}P^H = P^{-1}
+\end{align}  
+As $P$ is considered complex matrix .
+Let's consider $F = \frac{1}{\sqrt{n}}P$, so 
+\begin{align}
+\frac{1}{\sqrt{n}}P^H \frac{1}{\sqrt{n}}P=I\\
+\implies F^H F = I\\
+\implies F^H = F^{-1}
+\end{align}
+So, $F$ is a unitary matrix, that implies that $P$ is also unitary matrix.
+As the circulant matrix $A$ is normal, so it is unitarily diagonalizable, so
+\begin{align}
+D = P^{-1} A P\\
+\implies D = \frac{1}{n}(P^H A P)
+\end{align}
+%\renewcommand{\theequation}{\theenumi}
+%\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+%\numberwithin{equation}{enumi}
+%\item Verification of the above problem using python code.\\
+%\solution The  following Python code generates Fig. \ref{fig:parabola}
+%\begin{lstlisting}
+%codes/check_parab.py
+%\end{lstlisting}
+%
+%So the solution is matching with the given plot, hence it is verified.
+%%
+%\end{enumerate}
+
+\end{document}
+
+
+
